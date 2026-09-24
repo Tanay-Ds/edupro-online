@@ -21,3 +21,6 @@ Thumbs.db
 # Local Helper Scripts
 start_app.bat
 start_app.ps1
+
+# Local Reports & Papers
+reports/Research_Paper_EduPro.md
