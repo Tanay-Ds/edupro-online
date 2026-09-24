@@ -165,8 +165,9 @@ st.markdown("""
             </p>
         </div>
         <div style="text-align: right; background: rgba(255,255,255,0.12); padding: 0.5rem 1rem; border-radius: 8px;">
-            <span style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #e0e7ff;">AI Engine</span>
-            <div style="font-weight: 700; color: #34d399; font-size: 0.95rem;">● Active (k=4 Clusters)</div>
+            <div style="font-weight: 700; color: #34d399; font-size: 0.95rem; display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 0.75rem;">●</span> AI Engine Active
+            </div>
         </div>
     </div>
 </div>
@@ -201,22 +202,31 @@ if tab_choice == "🎯 Personalized Recommender & Profiles":
         "Select any learner to inspect their profile, view their assigned behavioral segment, and see tailored course recommendations."
     )
 
-    # 1. Learner Selection Ribbon
-    col_sel1, col_sel2 = st.columns([4, 8])
-    with col_sel1:
-        all_users = sorted(clustered_df["UserID"].unique())
-        selected_uid = st.selectbox("👤 Select Learner ID:", all_users, index=0)
+    # 1. Learner Selection & Profile Summary Ribbon
+    col_sel, col_info, col_seg = st.columns([3, 4, 5])
     
-    with col_sel2:
+    with col_sel:
+        all_users = sorted(clustered_df["UserID"].unique())
+        selected_uid = st.selectbox("👤 Select Learner ID", all_users, index=0)
         u_row = clustered_df[clustered_df["UserID"] == selected_uid].iloc[0]
         u_cluster = int(u_row["cluster_label"])
         u_persona = personas.get(str(u_cluster), {})
-        
+
+    with col_info:
+        st.markdown("<p style='font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #94a3b8; margin-bottom: 0.35rem;'>Learner Identity</p>", unsafe_allow_html=True)
         st.markdown(f"""
-        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 0.75rem 1.2rem; margin-top: 0.35rem;">
-            <b>Name:</b> {u_row['UserName']} &nbsp;|&nbsp; 
-            <b>Demographics:</b> {u_row['Age']} yrs, {u_row['Gender']} &nbsp;|&nbsp; 
-            <b>Assigned Segment:</b> <span style="color: #4338ca; font-weight: 700;">{u_persona.get('icon', '🎓')} {u_persona.get('title', 'Learner')}</span>
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 0.45rem 0.85rem; height: 42px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-weight: 600;">{u_row['UserName']}</span>
+            <span style="opacity: 0.75; font-size: 0.85rem;">{u_row['Age']} yrs • {u_row['Gender']}</span>
+        </div>
+        """, unsafe_allow_html=True)
+
+    with col_seg:
+        st.markdown("<p style='font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: #94a3b8; margin-bottom: 0.35rem;'>Assigned Behavioral Persona</p>", unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.25) 0%, rgba(99, 102, 241, 0.15) 100%); border: 1px solid rgba(99, 102, 241, 0.45); border-radius: 8px; padding: 0.45rem 1rem; height: 42px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <span style="font-size: 1.15rem;">{u_persona.get('icon', '🎓')}</span>
+            <span style="font-weight: 700; color: #818cf8; font-size: 0.95rem;">{u_persona.get('title', 'Learner')}</span>
         </div>
         """, unsafe_allow_html=True)
 
