@@ -83,4 +83,4 @@ Open your browser at `http://localhost:8501`.
 ---
 
 ## 👥 Authors & Acknowledgments
-- **Tanay Dashore** — Lead Data Scientist & ML Engineer, Unified Mentor Project.
+- **Tanay Dashore** —Unified Mentor Project.
