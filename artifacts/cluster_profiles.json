@@ -1,0 +1,82 @@
+{
+  "0": {
+    "cluster_id": 0,
+    "title": "Foundational & Budget Learners",
+    "icon": "\ud83c\udf31",
+    "description": "Early-stage learners focusing heavily on free introductory courses and foundational basics. Price-sensitive with selective enrollment patterns.",
+    "strategy": "Recommend high-rated free beginner courses and transitional discounts for entry-level paid tracks.",
+    "size": 948,
+    "share_pct": 31.6,
+    "metrics": {
+      "avg_age": 25.2,
+      "avg_courses_enrolled": 1.6,
+      "avg_total_spending": 168.15,
+      "paid_course_ratio": 0.344,
+      "avg_course_rating": 3.26,
+      "learning_depth_index": 0.21,
+      "diversity_score": 0.127,
+      "dominant_category": "Programming",
+      "dominant_level": "Beginner"
+    }
+  },
+  "1": {
+    "cluster_id": 1,
+    "title": "Advanced Domain Specialists",
+    "icon": "\ud83c\udfaf",
+    "description": "Experienced practitioners focused on advanced and rigorous subject matters. They prioritize specialized mastery, high learning depth, and challenging certifications.",
+    "strategy": "Recommend advanced masterclasses, hands-on capstone projects, and peer code reviews.",
+    "size": 968,
+    "share_pct": 32.27,
+    "metrics": {
+      "avg_age": 24.6,
+      "avg_courses_enrolled": 1.6,
+      "avg_total_spending": 121.78,
+      "paid_course_ratio": 0.39,
+      "avg_course_rating": 2.86,
+      "learning_depth_index": 1.79,
+      "diversity_score": 0.129,
+      "dominant_category": "Design",
+      "dominant_level": "Advanced"
+    }
+  },
+  "2": {
+    "cluster_id": 2,
+    "title": "Intermediate Skill Builders",
+    "icon": "\u26a1",
+    "description": "Mid-tier learners moving beyond basics toward specialized vocational application. They focus on applied workflows, project certifications, and domain transition.",
+    "strategy": "Deliver intermediate certification tracks, portfolio-building projects, and industry case studies.",
+    "size": 628,
+    "share_pct": 20.93,
+    "metrics": {
+      "avg_age": 25.2,
+      "avg_courses_enrolled": 1.34,
+      "avg_total_spending": 104.77,
+      "paid_course_ratio": 0.282,
+      "avg_course_rating": 3.38,
+      "learning_depth_index": 0.99,
+      "diversity_score": 0.109,
+      "dominant_category": "Cybersecurity",
+      "dominant_level": "Intermediate"
+    }
+  },
+  "3": {
+    "cluster_id": 3,
+    "title": "Career Up-skillers & Power Learners",
+    "icon": "\ud83d\udcbc",
+    "description": "Highly active power learners with extensive enrollment volume and substantial investment. They explore multi-domain roadmaps, seeking end-to-end skill progression.",
+    "strategy": "Offer enterprise learning subscriptions, executive mentorship, and career transition pathways.",
+    "size": 456,
+    "share_pct": 15.2,
+    "metrics": {
+      "avg_age": 24.9,
+      "avg_courses_enrolled": 13.36,
+      "avg_total_spending": 1246.14,
+      "paid_course_ratio": 0.37,
+      "avg_course_rating": 3.11,
+      "learning_depth_index": 0.98,
+      "diversity_score": 0.725,
+      "dominant_category": "Data Science",
+      "dominant_level": "Beginner"
+    }
+  }
+}
